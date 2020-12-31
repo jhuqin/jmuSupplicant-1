@@ -105,7 +105,7 @@ uint8_t
     return -1;
   memset(outbuf,0,outlen);
  
- if (iconv (cd, &inbuf, &inlen, &outbuf, &outlen) == (size_t)-1)
+  if (iconv (cd, &inbuf, &inlen, &outbuf, &outlen) == (size_t)-1)
     return -1;
   iconv_close(cd);
   return 0;
