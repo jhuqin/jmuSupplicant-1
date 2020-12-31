@@ -100,10 +100,12 @@ uint8_t
   // 此处错误处理很重要, 否则交叉编译到路由器运行出现Bus error
   if((cd = iconv_open(to_charset,from_charset)) == (iconv_t)-1)
     return -1;
+    
   if (cd==0)
     return -1;
   memset(outbuf,0,outlen);
-  if (iconv (cd, &inbuf, &inlen, &outbuf, &outlen) == (size_t)-1)
+ 
+ if (iconv (cd, &inbuf, &inlen, &outbuf, &outlen) == (size_t)-1)
     return -1;
   iconv_close(cd);
   return 0;
