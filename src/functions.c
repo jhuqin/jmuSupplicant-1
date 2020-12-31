@@ -93,24 +93,22 @@ uint8_t
 // description:
 //    字符串编码转换
 //------------------------------------------------------------------------
-int code_convert(char *from_charset, char *to_charset,
+/*int code_convert(char *from_charset, char *to_charset,
              char *inbuf, size_t inlen, char *outbuf, size_t outlen)
 {
   iconv_t cd;
   // 此处错误处理很重要, 否则交叉编译到路由器运行出现Bus error
   if((cd = iconv_open(to_charset,from_charset)) == (iconv_t)-1)
     return -1;
-
   if (cd==0)
     return -1;
   memset(outbuf,0,outlen);
-
   if (iconv (cd, &inbuf, &inlen, &outbuf, &outlen) == (size_t)-1)
     return -1;
   iconv_close(cd);
   return 0;
 }
-
+*/
 //added to convert GBK to utf-8
 static char *gbk2utf(char *gbksrc, size_t gbklen)	/* GBK转UTF－8 */
 {
